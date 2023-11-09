@@ -1,0 +1,13 @@
+export { default as HomePg } from "./HomePg";
+export { default as Carousal } from "./Carousal";
+export { default as HomePgCard } from "./HomePgCard";
+export { default as CarousalCategory } from "./CarousalCategory";
+export { default as CarousalProduct } from "./CarousalProduct";
+export { default as NavBar } from "./NavBar";
+export { default as Search } from "./Search";
+export { default as ProductPage } from "./ProductPage";
+export { default as SearchResults } from "./SearchResults";
+export { default as Checkout } from "./Checkout";
+export { default as ProductDeatils } from "./ProductDeatils";
+export { default as ProductBadge } from "./ProductBadge";
+export { default as ProductRatings } from "./ProductRatings";
