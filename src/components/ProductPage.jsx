@@ -1,17 +1,27 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { callAPI } from "../utils/CallApi";
 import { GB_CURRENCY } from "../utils/constant";
-import ProductDeatils from "./ProductDeatils";
+import ProductDetails from "./ProductDetails";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
 
 const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState("1");
 
   const getProduct = () => {
     callAPI(`data/products.json`).then((productResults) => {
       setProduct(productResults[id]);
     });
+  };
+
+  const addToQuantityProduct = () => {
+    setProduct((product.quantity = quantity));
+    return product;
   };
 
   useEffect(() => {
@@ -30,7 +40,7 @@ const ProductPage = () => {
             </div>
             <div className="col-span-5 p-4 rounded bg-white divide-y divide-gray-400">
               <div className="mb-3">
-                <ProductDeatils product={product} ratings={true} />
+                <ProductDetails product={product} ratings={true} />
               </div>
               <div className="text-base xl:text-lg mt-3">
                 {product.description}
@@ -58,6 +68,7 @@ const ProductPage = () => {
               <div className="text-base xl:text-lg mt-1 ">
                 Quantity:
                 <select
+                  onChange={(e) => setQuantity(e.target.value)}
                   className="p-2 bg-white border rounded-md focus:border-indigo-600 "
                   id=""
                 >
@@ -66,9 +77,14 @@ const ProductPage = () => {
                   <option>3</option>
                 </select>
               </div>
-              <button className="bg-yellow-400 w-full p-3 text-xs xl:text-sm rounded hover:bg-yellow-500 mt-3">
-                Add to Cart
-              </button>
+              <Link to={"/checkout"}>
+                <button
+                  onClick={() => dispatch(addToCart(addToQuantityProduct()))}
+                  className="bg-yellow-400 w-full p-3 text-xs xl:text-sm rounded hover:bg-yellow-500 mt-3"
+                >
+                  Add to Cart
+                </button>
+              </Link>
             </div>
           </div>
         </div>

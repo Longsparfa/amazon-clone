@@ -1,13 +1,17 @@
+/* eslint-disable react/prop-types */
 import ProductBadge from "./ProductBadge";
 import ProductRatings from "./ProductRatings";
 
-const ProductDeatils = ({ product, ratings }) => {
+// eslint-disable-next-line react/prop-types
+const ProductDetails = ({ product, ratings }) => {
   return (
     <div className="m-1">
       <div className="text-xl xl:text-2xl font-medium mb-1">
         {product.title}
       </div>
-      <div className="text-sm xl:text-base mb-1">by <span className="text-blue-500">{product.brand}</span> </div>
+      <div className="text-sm xl:text-base mb-1">
+        by <span className="text-blue-500">{product.brand}</span>{" "}
+      </div>
       {ratings && (
         <div className="text-sm xl:text-2xl mb-1">
           <ProductRatings
@@ -26,4 +30,4 @@ const ProductDeatils = ({ product, ratings }) => {
   );
 };
 
-export default ProductDeatils;
+export default ProductDetails;

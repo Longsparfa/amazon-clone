@@ -1,4 +1,6 @@
-import React from "react";
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/prop-types */
+
 
 const ProductBadge = ({ badge }) => {
   if (badge === "choice") {
