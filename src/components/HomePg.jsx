@@ -1,13 +1,12 @@
-import React from "react";
 import { Carousal, CarousalCategory, CarousalProduct, HomePgCard } from "./";
 
 const HomePg = () => {
   return (
     <>
-      <div className="bg-amazonclone-background ">
-        <div className="min-w-[1000px] max-w-[1500px] m-auto  ">
+      <div className="bg-amazonclone-background overflow-hidden ">
+        <div className="w-full m-auto  ">
           <Carousal />
-          <div className="grid grid-cols-3 xl:grid-cols-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
             <HomePgCard
               title="We have a surprise for you"
               img="../images/home_grid_1.jpg"
@@ -49,13 +48,21 @@ const HomePg = () => {
               link="See terms and conditions"
             />
             <div className="m-3 pt-4">
-              <img className="xl:hidden" src="../images/banner_image_2.jpg" alt="banner" />
+              <img
+                className="xl:hidden"
+                src="../images/banner_image_2.jpg"
+                alt="banner"
+              />
             </div>
           </div>
           <CarousalProduct />
           <CarousalCategory />
           <div className="h-[200px] ">
-            <img className="h-[100%] m-auto" src="../images/banner_image.jpg" alt="" />
+            <img
+              className="h-[100%] m-auto"
+              src="../images/banner_image.jpg"
+              alt=""
+            />
           </div>
         </div>
       </div>

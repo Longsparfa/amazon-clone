@@ -36,7 +36,7 @@ const Search = () => {
   }, []);
 
   return (
-    <div className="w-[100%] ">
+    <div className="w-[100%] hidden sm:block">
       <div className="flex items-center h-10 bg-amazonclone-yellow rounded ">
         <select
           onChange={(e) => setCategory(e.target.value)}
@@ -51,7 +51,7 @@ const Search = () => {
           <option>Mobile</option>
         </select>
         <input
-          className="flex grow items-center h-[100%] rounded-l text-black "
+          className="flex w-[50%] sm:grow items-center h-[100%] rounded-l text-black "
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}

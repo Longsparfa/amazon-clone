@@ -7,17 +7,17 @@ import { useSelector } from "react-redux";
 const NavBar = () => {
   const cart = useSelector((state) => state.cart.productsNumber);
   return (
-    <header className="min-w-[1000px]  ">
+    <header className="w-full  ">
       <div className="flex bg-amazonclone text-white h-[60px]">
         <div className="flex items-center mr-4">
           <Link to={"/"}>
             <img
-              className="h-[35px] w-[100px] m-2 "
+              className="h-[35px] w-[50px] m-2 "
               src="../images/amazon.png"
               alt=""
             />
           </Link>
-          <div className="pr-4 pl-4">
+          <div className="pr-4 pl-4 hidden md:block">
             <div className="text-xs xl:text-sm">Delivered to</div>
             <div className="text-sm xl:text-base font-bold">Nigeria</div>
           </div>
@@ -26,13 +26,13 @@ const NavBar = () => {
           <Search />
         </div>
         <div className="flex items-center ml-4 ">
-          <div className="pr-4 pl-4">
+          <div className="pr-4 pl-4 hidden md:block">
             <div className="text-xs xl:text-sm">Hello, sign in</div>
             <div className="text-sm xl:text-base font-bold">
               Accounts & Lists
             </div>
           </div>
-          <div className="pr-4 pl-4">
+          <div className="pr-4 pl-4 hidden md:block">
             <div className="text-xs xl:text-sm">Returns</div>
             <div className="text-sm xl:text-base font-bold">& Orders</div>
           </div>
