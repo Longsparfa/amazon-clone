@@ -34,7 +34,7 @@ const ProductPage = () => {
     product && (
       <div className="h-screen  bg-amazonclone-background">
         <div className="w-full m-auto p-4 ">
-          <div className="grid grid-cols-10 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-10 gap-2">
             <div className="col-span-3 p-8 rounded bg-white m-auto">
               <img src={`${product.image}`} />
             </div>

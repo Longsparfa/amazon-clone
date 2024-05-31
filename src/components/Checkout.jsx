@@ -21,8 +21,8 @@ const Checkout = () => {
 
   return (
     <div className="h-screen bg-amazonclone-background">
-      <div className="min-w-[1000px] max-w-[1500px] m-auto pt-8 ">
-        <div className="grid grid-cols-8 gap-10 ">
+      <div className="w-full m-auto pt-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-8 gap-10 ">
           <div className="col-span-6 bg-white">
             <div className="text-2xl xl:text-3xl m-4">Shopping Cart</div>
             {Products.map((product) => {

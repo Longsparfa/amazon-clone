@@ -33,7 +33,7 @@ const SearchResults = () => {
   }, [searchParams]);
 
   return (
-    <div className="min-w-[1200px] max-w-[1300px] m-auto pt-4 ">
+    <div className="w-full m-auto pt-4 ">
       {products &&
         products.map((product, key) => {
           return (
