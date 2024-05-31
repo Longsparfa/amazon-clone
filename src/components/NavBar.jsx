@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Search from "./Search";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
+import MobileSearch from "./MobileSearch";
 
 const NavBar = () => {
   const cart = useSelector((state) => state.cart.productsNumber);
@@ -49,7 +50,10 @@ const NavBar = () => {
           </Link>
         </div>
       </div>
-      <div className="flex bg-amazonclone-light_blue text-white space-x-3 text-xs xl:text-sm p-2 pl-6">
+      <div className="sm:hidden">
+        <MobileSearch />
+      </div>
+      <div className="hidden sm:flex bg-amazonclone-light_blue text-white space-x-3 text-xs xl:text-sm p-2 pl-6">
         <div>Today's deal</div>
         <div>Customer Service</div>
         <div>Registry</div>
